@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+/*Colors*/
+
+.light-mode{
+    --neutral-900: #051513;
+    --neutral-800: #4C5C59;
+    --neutral-500: #899492;
+    --neutral-400: #C0CFCC;
+    --neutral-300: #DDE9E7;
+    --neutral-100: #E8F0EF;
+    --neutral-0: white;
+
+    --body-bg-color: var(--neutral-100);
+    
+    --btn-primary-color: var(--neutral-0);
+    --btn-primary-bg-color: linear-gradient(var(--teal-700));
+    --btn-primary-border-color: linear-gradient(180deg, #014745e0, #014745FF);
+    --btn-primary-hover-bg-color: linear-gradient(var(--teal-800));
+    --btn-primary-hover-border-color: linear-gradient(180deg,#013C3Be0, #013C3BFF);
+
+    --auth-card-bg-color: var(--neutral-0);
+    --auth-primary-color: var(--neutral-900);
+    --auth-primary-hover-color: var(--teal-700);
+    --auth-primary-focus-color: var(--teal-800);
+    --auth-secondary-color: var(--neutral-800);
+    --auth-form-border-color: var(--neutral-500);
+    --auth-form-hover-bg-color: var(--neutral-100);
+}
+
+.dark-mode{
+    --neutral-900: #001414;
+    --neutral-800: #001F1F;
+    --neutral-600: #002E2D;
+    --neutral-500: #004241;
+    --neutral-400: #004746;
+    --neutral-300: #00706E;
+    --neutral-100: #B1B9B9;
+    --neutral-0: white;
+
+    --body-bg-color: var(--neutral-900);
+    
+    --auth-card-bg-color: var(--neutral-800);
+}
+
+:root{
+    --teal-700: #014745;
+    --teal-800: #013C3B;
+
+    --red-600: #FD4740;
+    --red-800: #CB0A04;
+}
+
+/* Preset */
+
+.text-preset-1{
+    font-size: 24px;
+    line-height: 140%;
+    letter-spacing: 0px;
+    font-weight: bold;
+}
+
+.text-preset-2{
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0px;
+    font-weight: bold;
+}
+
+.text-preset-2-semi{
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0px;
+    font-weight: 600;
+}
+
+.text-preset-3{
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0px;
+    font-weight: 600;
+}
+
+.text-preset-3-medium{
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0px;
+    font-weight: 500;
+}
+
+.text-preset-4{
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0px;
+    font-weight: 600;
+}
+
+.text-preset-4-medium{
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0px;
+    font-weight: 500;
+}
+
+.text-preset-5{
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 0px;
+    font-weight: 500;
+}
+
+/*Defaults*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Manrope";
+}
+
+body{
+    background-color: var(--body-bg-color);
+}
