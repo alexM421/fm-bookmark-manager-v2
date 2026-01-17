@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import styles from './TextInput.module.css'
+import IconHidePassword from '../../assets/IconHidePassword'
+import IconShowPassword from '../../assets/IconShowPassword'
 
 export type TextInputProps = {
     nameId: string,
@@ -42,10 +44,7 @@ export default function TextInput({ nameId, legend, placeholder, required, showA
                         type="button" 
                         onClick={toggleShowPassword}
                     >
-                        <img
-                            src={showPassword ? "/assets/images/icon-hide-password.png" : "/assets/images/icon-show-password.png"}
-                            alt={showPassword ? "Hide password" : "Show password"}
-                        />
+                        {showPassword ? <IconHidePassword /> : <IconShowPassword />}
                     </button>
                 }
             </div>

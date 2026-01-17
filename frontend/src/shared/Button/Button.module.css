@@ -7,7 +7,7 @@ button{
     border-radius: 8px;
 
     color: var(--btn-primary-color);
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     cursor: pointer;
     transition: all 0.3s ease;
     outline: 2px solid transparent;
@@ -27,5 +27,4 @@ button{
     &:focus{
         outline: 2px solid var(--btn-primary-focus-border-color);
     }
-
 }

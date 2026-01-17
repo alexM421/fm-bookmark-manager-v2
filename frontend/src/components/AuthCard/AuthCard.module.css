@@ -15,6 +15,7 @@
         border-radius: 12px;
         background-color: var(--auth-card-bg-color);
         width: 448px;
+        border: 1px solid var(--auth-form-border-color);
     
         &>img{
             height: 32px;
