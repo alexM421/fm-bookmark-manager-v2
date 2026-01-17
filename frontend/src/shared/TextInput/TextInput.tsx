@@ -5,7 +5,7 @@ import IconShowPassword from '../../assets/IconShowPassword'
 
 export type TextInputProps = {
     nameId: string,
-    legend: string,
+    legend?: string,
     placeholder: string,
     required: boolean,
     showAsterisk: boolean,
@@ -13,10 +13,15 @@ export type TextInputProps = {
     message?: string,
     type?: "text" | "email" | "password",
     minLength?: number,
-    maxLength?: number
+    maxLength?: number,
+    icon?: React.ReactNode,
+    controlledObject?: {
+        value: string,
+        onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    }
 }
 
-export default function TextInput({ nameId, legend, placeholder, required, showAsterisk, error, message, type, minLength, maxLength }: TextInputProps) {
+export default function TextInput({ nameId, legend, placeholder, required, showAsterisk, error, message, type, minLength, maxLength, icon, controlledObject }: TextInputProps) {
 
     const [showPassword, setShowPassword] = useState(false)
     
@@ -24,11 +29,12 @@ export default function TextInput({ nameId, legend, placeholder, required, showA
 
     return (
         <div className={styles["text-input"]}>
-            <label 
+            {legend && <label 
                 htmlFor={nameId}
                 className="text-preset-4"
-            >{`${legend}`} {required && showAsterisk? <span style={{ color: "var(--asterik-color)" }}>*</span> : ""}</label>
+            >{`${legend}`} {required && showAsterisk? <span style={{ color: "var(--asterik-color)" }}>*</span> : ""}</label>}
             <div>
+                {icon && <div className={styles["icon"]}>{icon}</div>}
                 <input 
                     type={type === "password" && showPassword ? "text" : type || "text"} 
                     id={nameId} 
@@ -38,6 +44,9 @@ export default function TextInput({ nameId, legend, placeholder, required, showA
                     autoComplete="off"
                     minLength={minLength}
                     maxLength={maxLength}
+                    style={{ paddingLeft: icon ? "40px" : "12px" }}
+                    value={controlledObject?.value}
+                    onChange={controlledObject?.onChange}
                 />
                 {type === "password" && 
                     <button 

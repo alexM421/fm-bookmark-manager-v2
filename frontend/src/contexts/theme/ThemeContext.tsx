@@ -3,7 +3,7 @@ import { createContext, useContext } from "react"
 export type ThemeType = "light" | "dark"
 export type ThemeContextType = {
     theme: ThemeType,
-    toggleTheme: React.SetStateAction<React.Dispatch<ThemeType>>
+    toggleTheme:  () => void
 }
 
 export const ThemeContext = createContext<undefined | ThemeContextType>(undefined)

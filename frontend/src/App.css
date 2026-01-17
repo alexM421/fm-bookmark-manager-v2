@@ -92,6 +92,20 @@
     --checkbox-checked-hover-bg-color: var(--teal-800);
     --checkbox-checked-focus-border-color: var(--neutral-400);
 
+    --navbar-bg-color: var(--neutral-800);
+    --navbar-border-color: var(--neutral-500);
+    --navbar-profile-color: var(--neutral-0);
+    --navbar-profile-primary-color: var(--neutral-0);
+    --navbar-profile-secondary-color: var(--neutral-100);
+
+    --profile-menu-bg-color: var(--neutral-600);
+    --profile-menu-border-color: var(--neutral-400);
+    --profile-menu-hover-bg-color: var(--neutral-500);
+
+    --theme-toggle-bg-color: var(--neutral-400);
+    --theme-toggle-icon-color: var(--neutral-0);
+    --theme-toggle-slider-bg-color: var(--neutral-600);
+
     --checkbox-checked-icon-color: var(--neutral-0);
     --checkbox-focus-outline-color: var(--neutral-100);
 

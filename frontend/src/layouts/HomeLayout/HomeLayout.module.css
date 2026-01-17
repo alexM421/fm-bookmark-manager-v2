@@ -1,3 +1,9 @@
 .home-layout{
     display: flex;
+
+    &>div:last-of-type{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
 }
