@@ -110,6 +110,25 @@
     --checkbox-checked-icon-color: var(--neutral-0);
     --checkbox-focus-outline-color: var(--neutral-100);
 
+
+    --bookmarks-header-sort-bg-color: var(--neutral-600);
+    --bookmarks-header-sort-border-color: var(--neutral-400);
+    --bookmarks-text-primary-color: var(--neutral-0);
+    --bookmarks-text-secondary-color: var(--neutral-100);
+    --bookmarks-header-sort-options-bg-color: var(--neutral-600);
+    --bookmarks-header-sort-options-border-color: var(--neutral-500);
+    --bookmarks-header-sort-options-hover-bg-color: var(--neutral-500);
+
+    --bookmark-card-bg-color: var(--neutral-800);
+    --bookmark-card-border-color: var(--neutral-600);
+    --bookmark-card-text-primary-color: var(--neutral-0);
+    --bookmark-card-text-secondary-color: var(--neutral-100);
+    --bookmark-card-divider-color: var(--neutral-500);
+    --bookmark-card-tag-bg-color: var(--neutral-600);
+    --bookmark-card-menu-border-color: var(--neutral-500);
+    --bookmark-card-menu-hover-border-color: var(--neutral-400);
+    --bookmark-card-menu-focus-outline-color: var(--neutral-100);
+
     --asterik-color: var(--neutral-100);
     --error-color: var(--red-600);
 }
@@ -192,4 +211,12 @@
 
 body{
     background-color: var(--body-bg-color);
+    height: 100vh;
+    max-height: 100vh;
+}
+
+/* Hide Scrollbar */
+
+*::-webkit-scrollbar {
+    display: none;
 }

@@ -1,4 +1,4 @@
-const IconHome = () => (
+const IconLastVisited = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={20}
@@ -22,4 +22,4 @@ const IconHome = () => (
     </defs>
   </svg>
 )
-export default IconHome
+export default IconLastVisited

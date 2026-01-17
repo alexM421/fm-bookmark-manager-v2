@@ -1,7 +1,7 @@
 import Sidebar from '../Sidebar/Sidebar'
 import styles from './HomeLayout.module.css'
-import { Outlet } from 'react-router-dom'
 import Navbar from '../Navbar/Navbar'
+import Bookmarks from '../../pages/Bookmarks/Bookmarks'
 
 export default function HomeLayout() {
     return (
@@ -9,7 +9,7 @@ export default function HomeLayout() {
             <Sidebar />
             <div>
                 <Navbar />
-                <Outlet/>
+                <Bookmarks />
             </div>
         </div>
     )
