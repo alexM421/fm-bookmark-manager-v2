@@ -18,6 +18,13 @@
     --btn-primary-border-color: linear-gradient(180deg, #014745e0, #014745FF);
     --btn-primary-hover-bg-color: linear-gradient(var(--teal-800));
     --btn-primary-hover-border-color: linear-gradient(180deg,#013C3Be0, #013C3BFF);
+    --btn-primary-focus-border-color: var(--teal-800);
+
+    --text-input-primary-color: var(--neutral-900);
+    --text-input-secondary-color: var(--neutral-800);
+    --text-input-border-color: var(--neutral-500);
+    --text-input-hover-bg-color: var(--neutral-100);
+    --text-input-focus-border-color: var(--teal-700);
 
     --auth-card-bg-color: var(--neutral-0);
     --auth-primary-color: var(--neutral-900);
@@ -26,6 +33,9 @@
     --auth-secondary-color: var(--neutral-800);
     --auth-form-border-color: var(--neutral-500);
     --auth-form-hover-bg-color: var(--neutral-100);
+
+    --asterik-color: var(--teal-700);
+    --error-color: var(--red-800);
 }
 
 .dark-mode{
@@ -41,6 +51,10 @@
     --body-bg-color: var(--neutral-900);
     
     --auth-card-bg-color: var(--neutral-800);
+    --btn-primary-focus-border-color: var(--neutral-100);
+
+    --asterik-color: var(--neutral-100);
+    --error-color: var(--red-600);
 }
 
 :root{
