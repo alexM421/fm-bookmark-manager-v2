@@ -105,6 +105,7 @@
     --theme-toggle-bg-color: var(--neutral-400);
     --theme-toggle-icon-color: var(--neutral-0);
     --theme-toggle-slider-bg-color: var(--neutral-600);
+    --theme-toggle-focus-outline-color: var(--neutral-100);
 
     --checkbox-checked-icon-color: var(--neutral-0);
     --checkbox-focus-outline-color: var(--neutral-100);

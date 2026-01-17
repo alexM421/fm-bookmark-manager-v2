@@ -3,18 +3,26 @@ import IconProfile from '../../assets/IconProfile'
 import IconTheme from '../../assets/IconTheme'
 import IconLogout from '../../assets/IconLogout'
 import ThemeToggle from '../../contexts/theme/ThemeToggle/ThemeToggle'
+import { useRef } from 'react'
+import useHandleClickOutside from '../../hooks/useHandleClickOutside'
 
 type ProfileMenuProps = {
     name: string,
     email: string,
-    profileMenuOpen: boolean
+    profileMenuOpen: boolean,
+    profileBtnRef: React.RefObject<HTMLButtonElement | null>,
+    setProfileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function ProfileMenu({ profileMenuOpen, name, email }: ProfileMenuProps) {
+export default function ProfileMenu({ profileMenuOpen, name, email, profileBtnRef, setProfileMenuOpen }: ProfileMenuProps) {
 
+    
+    const profileRef = useRef<HTMLDivElement>(null)
+
+    useHandleClickOutside(profileRef, () => setProfileMenuOpen(false), profileBtnRef)
 
     return (
-        <div className={`${styles["profile-menu"]} ${profileMenuOpen ? styles["profile-menu-open"] : ""}`}>
+        <div ref={profileRef} className={`${styles["profile-menu"]} ${profileMenuOpen ? styles["profile-menu-open"] : ""}`}>
             <div className={styles["profile-menu-head"]}>
                 <IconProfile />
                 <div className={styles["profile-menu-head-info"]}>

@@ -4,12 +4,13 @@ import IconProfile from '../../assets/IconProfile'
 import TextInput from '../../shared/TextInput/TextInput'
 import IconSearch from '../../assets/IconSearch'
 import ProfileMenu from './ProfileMenu'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 export default function Navbar() {
 
     const [profileMenuOpen, setProfileMenuOpen] = useState(false)
     const [search, setSearch] = useState("")
+    const profileBtnRef = useRef<HTMLButtonElement>(null)
     
     return (
         <div className={styles["navbar"]}>
@@ -25,10 +26,10 @@ export default function Navbar() {
             <div className={styles["navbar-right"]}>
                 <Button buttonText="+ Add Bookmark" onClick={() => {}} />
                 <div className={styles["navbar-profile"]}>
-                    <button onClick={() => setProfileMenuOpen(prev => !prev)}>
+                    <button ref={profileBtnRef} onClick={() => setProfileMenuOpen(prev => !prev)}>
                         <IconProfile />
                     </button>
-                    <ProfileMenu name="John Doe" email="john.doe@example.com" profileMenuOpen={profileMenuOpen} />
+                    <ProfileMenu name="John Doe" email="john.doe@example.com" profileMenuOpen={profileMenuOpen} profileBtnRef={profileBtnRef} setProfileMenuOpen={setProfileMenuOpen}/>
                 </div>
             </div>
         </div>

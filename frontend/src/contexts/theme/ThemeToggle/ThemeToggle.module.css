@@ -6,6 +6,13 @@
     cursor: pointer;
     background-color: var(--theme-toggle-bg-color);
     user-select: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    transition: outline-color 0.3s ease;
+
+    &:has(input:focus-visible){
+        outline-color: var(--theme-toggle-focus-outline-color);
+    }
 
     &>.theme-toggle-icons-container{
         display: flex;
