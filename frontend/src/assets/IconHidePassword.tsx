@@ -1,4 +1,4 @@
-const SvgComponent = () => (
+const IconHidePassword = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={800}
@@ -19,4 +19,4 @@ const SvgComponent = () => (
     />
   </svg>
 )
-export default SvgComponent
+export default IconHidePassword

@@ -1,4 +1,4 @@
-import './Button.module.css'
+import styles from './Button.module.css'
 
 type ButtonProps = {
     onClick: () => void,
@@ -7,7 +7,7 @@ type ButtonProps = {
 
 export default function Button({ onClick, buttonText }: ButtonProps) {
     return (
-        <button className="text-preset-3" onClick={onClick}>
+        <button className={styles["button"] + " text-preset-3"} onClick={onClick}>
             {buttonText}
         </button>
     )
