@@ -3,15 +3,16 @@ import IconSort from "../../assets/IconSort"
 import IconCheck from "../../assets/IconCheck"
 import BookmarkCard from "./BookmarkCard/BookmarkCard"
 import useBookmarksData from "./useBookmarksData"
+import type { TagType } from "../../layouts/HomeLayout/HomeLayout"
 
-export default function Bookmarks({ search }: { search: string }) {
+export default function Bookmarks({ search, tags }: { search: string, tags: TagType[] }) {
 
     const { 
         showSortOptions, setShowSortOptions, 
         sortButtonRef, sortOptionsRef, 
         handleOptionClick, 
         sortBy, filteredBookmarks 
-    } = useBookmarksData({ search })
+    } = useBookmarksData({ search, tags })
 
     return (    
         <div className={styles["bookmarks"]}>

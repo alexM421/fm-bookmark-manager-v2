@@ -4,19 +4,31 @@ import Navbar from '../Navbar/Navbar'
 import Bookmarks from '../../pages/Bookmarks/Bookmarks'
 import { useState } from 'react'
 
-export default function HomeLayout() {
+export type TagType = {
+    name: string
+    counter: number
+    checked: boolean
+}
 
+export default function HomeLayout() {
 
     //handle the search
     const [search, setSearch] = useState("")
 
+    //handle the tags
+    const [tags, setTags] = useState<TagType[]>([{
+        name: 'tag-001',
+        counter: 10,
+        checked: false,
+    }])
+
     
     return (
         <div className={styles["home-layout"]}>
-            <Sidebar />
+            <Sidebar tags={tags} setTags={setTags} />
             <div>
                 <Navbar search={search} setSearch={setSearch} />
-                <Bookmarks search={search} />
+                <Bookmarks search={search} tags={tags} />
             </div>
         </div>
     )

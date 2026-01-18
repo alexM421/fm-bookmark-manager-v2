@@ -3,6 +3,7 @@ import useHandleClickOutside from "../../hooks/useHandleClickOutside"
 import { useState } from "react"
 import { useRef } from "react"
 import data from "../../../data.json"
+import type { TagType } from "../../layouts/HomeLayout/HomeLayout"
 
 export type bookmark = {
     id: string
@@ -18,7 +19,7 @@ export type bookmark = {
     lastVisited: string | null
 }
 
-export default function useBookmarksData({ search }: { search: string }) {
+export default function useBookmarksData({ search, tags }: { search: string, tags: TagType[] }) {
 
     const { bookmarks }: { bookmarks: bookmark[] } = data
 
@@ -43,11 +44,20 @@ export default function useBookmarksData({ search }: { search: string }) {
         return bookmark.isArchived === archive
     })
     
+    //checks for tags
+    const selectedTags = tags.filter((tag) => tag.checked).map((tag) => tag.name)
+    filteredBookmarks = selectedTags.length > 0 
+        ? filteredBookmarks.filter((bookmark) => {
+            return bookmark.tags.some((tag) => selectedTags.includes(tag.toLowerCase()))
+        })
+        : filteredBookmarks
 
     //and then search
-    filteredBookmarks = filteredBookmarks.filter((bookmark) => {
-        return bookmark.title.toLowerCase().includes(search.toLowerCase())
-    })
+    filteredBookmarks = search.length > 0 
+        ? filteredBookmarks.filter((bookmark) => {
+            return bookmark.title.toLowerCase().includes(search.toLowerCase())
+        })
+        : filteredBookmarks
 
     //sort the bookmarks
     filteredBookmarks = filteredBookmarks.sort((a, b) => {

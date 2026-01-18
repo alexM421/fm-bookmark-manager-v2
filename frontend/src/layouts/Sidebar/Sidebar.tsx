@@ -3,21 +3,21 @@ import { useThemeContext } from '../../contexts/theme/ThemeContext'
 import { Link, useLocation } from 'react-router-dom'
 import IconHome from '../../assets/IconHome'
 import IconArchive from '../../assets/IconArchive'
-import { useState } from 'react'
-import Tag, { type TagProps } from './Tag/Tag'
+import Tag from './Tag/Tag'
+import type { TagType } from '../HomeLayout/HomeLayout'
 
-export default function Sidebar() {
+type SidebarProps = {
+    tags: TagType[]
+    setTags: React.Dispatch<React.SetStateAction<TagType[]>>
+}
+
+export default function Sidebar({ tags, setTags }: SidebarProps) {
 
     const { theme } = useThemeContext()
-    const [tags, setTags] = useState<TagProps[]>([{
-        name: 'tag-001',
-        counter: 10,
-        checked: false,
-        onClick: () => {
-            console.log('clicked')
-            setTags(prevTags => prevTags.map(tag => tag.name === 'tag-001' ? { ...tag, checked: !tag.checked } : tag))
-        }
-    }])
+
+    const handleTagClick = (tagName: string) => {
+        setTags(prevTags => prevTags.map(tagObject => tagObject.name === tagName ? { ...tagObject, checked: !tagObject.checked } : tagObject))
+    }
 
     const { pathname } = useLocation()
     
@@ -39,7 +39,7 @@ export default function Sidebar() {
                     <h2 className="text-preset-5">TAGS</h2>
                     <div className={styles["sidebar-tags-list"]}>
                         {tags.map((tag) => (
-                            <Tag key={tag.name} {...tag} />
+                            <Tag key={tag.name} {...tag} onClick={() => handleTagClick(tag.name)} />
                         ))}
                     </div>
                 </div>
