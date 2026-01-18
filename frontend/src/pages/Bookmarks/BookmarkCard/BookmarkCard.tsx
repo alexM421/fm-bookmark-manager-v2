@@ -42,7 +42,7 @@ export default function BookmarkCard({ bookmark }: { bookmark: Bookmark }) {
                         <p className="text-preset-5">{url}</p>
                     </div>
                     
-                    <BookmarkCardMenu pinned={pinned} isArchived={isArchived} />
+                    <BookmarkCardMenu pinned={pinned} isArchived={isArchived} url={url} />
                 </div>
                 
                 <hr />

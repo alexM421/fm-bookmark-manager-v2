@@ -4,6 +4,7 @@
     justify-content: space-between;
     user-select: none;
     padding: 8px 12px;
+    border-radius: 6px;
 
     &>.tag-select{
         display: flex;
@@ -14,6 +15,14 @@
 
         &>p{
             color: var(--sidebar-text-color-secondary);
+        }
+    }
+
+    &:hover, &:has(.tag-select>label>input:focus-visible){
+        background-color: var(--sidebar-hover-bg-color);
+
+        &>.tag-select>p{
+            color: var(--sidebar-text-color-primary);
         }
     }
 

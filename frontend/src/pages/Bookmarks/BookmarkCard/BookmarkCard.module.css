@@ -4,6 +4,7 @@
     border-radius: 12px;
     background-color: var(--bookmark-card-bg-color);
     border: 1px solid transparent;
+    height: 272px;
     
     &>.bookmark-card-main {
         flex: 1;

@@ -15,7 +15,7 @@ import { useRef, useState } from "react"
 import useHandleClickOutside from "../../../hooks/useHandleClickOutside"
 
 
-export default function BookmarkCardMenu({ pinned, isArchived }: { pinned: boolean, isArchived: boolean }) {
+export default function BookmarkCardMenu({ pinned, isArchived, url }: { pinned: boolean, isArchived: boolean, url: string }) {
 
     //handle the menu click outside
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -25,10 +25,10 @@ export default function BookmarkCardMenu({ pinned, isArchived }: { pinned: boole
     useHandleClickOutside(menuRef, () => setIsMenuOpen(false), menuButtonRef)
 
     //visit button
-    const visit = <button className={styles["bookmark-card-main-header-menu-options-item"]}>
+    const visit = <a href={url} target="_blank" className={styles["bookmark-card-main-header-menu-options-item"]}>
                 <IconVisit />
                 <p className="text-preset-5">Visit</p>
-            </button>
+            </a>
      
 
     //copy URL button
