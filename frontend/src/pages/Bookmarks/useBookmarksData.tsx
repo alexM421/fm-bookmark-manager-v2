@@ -4,9 +4,23 @@ import { useState } from "react"
 import { useRef } from "react"
 import data from "../../../data.json"
 
+export type bookmark = {
+    id: string
+    title: string
+    url: string
+    favicon: string
+    description: string
+    tags: string[]
+    pinned: boolean
+    isArchived: boolean
+    visitCount: number
+    createdAt: string
+    lastVisited: string | null
+}
+
 export default function useBookmarksData({ search }: { search: string }) {
 
-    const { bookmarks } = data
+    const { bookmarks }: { bookmarks: bookmark[] } = data
 
     const [sortBy, setSortBy] = useState<string>("most-recent")
     const [showSortOptions, setShowSortOptions] = useState<boolean>(false)

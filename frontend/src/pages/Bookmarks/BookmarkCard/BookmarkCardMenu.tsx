@@ -15,16 +15,37 @@ import { useRef, useState } from "react"
 import useHandleClickOutside from "../../../hooks/useHandleClickOutside"
 /* Contexts */
 import { useToastContext } from "../../../contexts/toast/ToastContext"
+/* Modals */
+import { ArchiveModal, UnArchiveModal, DeleteModal, EditModal } from "../../../modals/ModalsAction"
+/* Types */
+import type { bookmark } from "../useBookmarksData"
+/* Components */
+import BookmarkCardMenuBtn from "./BookmarkCardMenuBtn"
 
 
-export default function BookmarkCardMenu({ pinned, isArchived, url }: { pinned: boolean, isArchived: boolean, url: string }) {
+export default function BookmarkCardMenu({ bookmark }: { bookmark: bookmark }) {
 
     const { addToast } = useToastContext()
+    const { pinned, isArchived, url, title, description, tags } = bookmark
+
+    const initialValues = {
+        title,
+        description,
+        url,
+        tags: tags.join(", ")
+    }
+
+    const [modalsDisplay, setModalsDisplay] = useState({
+        archive: false,
+        delete: false,
+        edit: false
+    })
 
     //handle the menu click outside
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const menuRef = useRef<HTMLDivElement>(null)
     const menuButtonRef = useRef<HTMLButtonElement>(null)
+
 
     useHandleClickOutside(menuRef, () => setIsMenuOpen(false), menuButtonRef)
 
@@ -37,60 +58,87 @@ export default function BookmarkCardMenu({ pinned, isArchived, url }: { pinned: 
 
     //copy URL button
     const copyURL = 
-    <button 
-        className={styles["bookmark-card-main-header-menu-options-item"]}
-        onClick={() => {
-            navigator.clipboard.writeText(url)
-            console.log("URL copied to clipboard")
-            addToast("URL copied to clipboard", "success")
-        }}
-    >
-        <IconCopy />
-        <p className="text-preset-5">Copy URL</p>
-    </button>
+        <BookmarkCardMenuBtn 
+            icon={<IconCopy />}
+            text="Copy URL"
+            onClick={() => {
+                navigator.clipboard.writeText(url)
+                addToast("URL copied to clipboard", "copy")
+                setIsMenuOpen(false)
+            }}
+        />
 
 
     //pin button
     const pin = pinned
         ?
-        <button className={styles["bookmark-card-main-header-menu-options-item"]}>
-            <IconUnpin/>
-            <p className="text-preset-5">Unpin</p>
-        </button>
+        <BookmarkCardMenuBtn 
+            icon={<IconUnpin />}
+            text="Unpin"
+            onClick={() => {
+                //set the bookmark as unpinned
+                addToast("Bookmark unpinned from top.", "pin")
+                setIsMenuOpen(false)
+            }}
+        />
         :
-        <button className={styles["bookmark-card-main-header-menu-options-item"]}>
-            <IconPin/>
-            <p className="text-preset-5">Pin</p>
-        </button>
+        <BookmarkCardMenuBtn 
+            icon={<IconPin />}
+            text="Pin"
+            onClick={() => {
+                //set the bookmark as pinned
+                addToast("Bookmark pinned to top.", "pin")
+                setIsMenuOpen(false)
+            }}
+        />
 
 
     //edit button
-    const edit = !isArchived && <button className={styles["bookmark-card-main-header-menu-options-item"]}>
-        <IconEdit />
-        <p className="text-preset-5">Edit</p>
-    </button>
+    const edit = !isArchived && 
+        <BookmarkCardMenuBtn 
+            icon={<IconEdit />}
+            text="Edit"
+            onClick={() => {
+                setModalsDisplay({ ...modalsDisplay, edit: true })
+                setIsMenuOpen(false)
+            }}
+        />
 
 
     //archive button
     const archive = isArchived
         ?
-        <button className={styles["bookmark-card-main-header-menu-options-item"]}>
-            <IconUnarchive/>
-            <p className="text-preset-5">Unarchive</p>
-        </button>
+        <BookmarkCardMenuBtn 
+            icon={<IconUnarchive />}
+            text="Unarchive"
+            onClick={() => {
+                //set the bookmark as unarchived
+                setModalsDisplay({ ...modalsDisplay, archive: true })
+                setIsMenuOpen(false)
+            }}
+        />
         :
-        <button className={styles["bookmark-card-main-header-menu-options-item"]}>
-            <IconArchive/>
-            <p className="text-preset-5">Archive</p>
-        </button>
+        <BookmarkCardMenuBtn 
+            icon={<IconArchive />}
+            text="Archive"
+            onClick={() => {
+                //set the bookmark as archived
+                setModalsDisplay({ ...modalsDisplay, archive: true })
+                setIsMenuOpen(false)
+            }}
+        />
 
 
     //delete button
     const deleteBookmark = isArchived && 
-        <button className={styles["bookmark-card-main-header-menu-options-item"]}>
-            <IconDelete />
-            <p className="text-preset-5">Delete</p>
-        </button>
+        <BookmarkCardMenuBtn 
+            icon={<IconDelete />}
+            text="Delete"
+            onClick={() => {
+                setModalsDisplay({ ...modalsDisplay, delete: true })
+                setIsMenuOpen(false)
+            }}
+        />
 
 
     return (
@@ -100,6 +148,7 @@ export default function BookmarkCardMenu({ pinned, isArchived, url }: { pinned: 
                     <IconMenuBookmark />
                 </button>
 
+
                 <div className={`${styles["bookmark-card-main-header-menu-options"]} ${isMenuOpen ? styles["visible"] : ""}`} ref={menuRef}>
                     {visit}
                     {copyURL}
@@ -108,6 +157,44 @@ export default function BookmarkCardMenu({ pinned, isArchived, url }: { pinned: 
                     {archive}
                     {deleteBookmark}        
                 </div>
+
+
+                {isArchived 
+                    ? <UnArchiveModal 
+                        modalDisplay={modalsDisplay.archive} 
+                        setModalDisplay={(boolean) => setModalsDisplay({ ...modalsDisplay, archive: boolean })} 
+                        onClick={() => {
+                            addToast("Bookmark restored.", "unarchive")
+                            setModalsDisplay({ ...modalsDisplay, archive: false })
+                        }} 
+                    /> 
+                    : <ArchiveModal 
+                        modalDisplay={modalsDisplay.archive} 
+                        setModalDisplay={(boolean) => setModalsDisplay({ ...modalsDisplay, archive: boolean })} 
+                        onClick={() => {
+                            addToast("Bookmark archived.", "archive")
+                            setModalsDisplay({ ...modalsDisplay, archive: false })
+                        }} 
+                />}
+
+                <DeleteModal 
+                    modalDisplay={modalsDisplay.delete} 
+                    setModalDisplay={(boolean) => setModalsDisplay({ ...modalsDisplay, delete: boolean })} 
+                    onClick={() => {
+                        addToast("Bookmark deleted.", "delete")
+                        setModalsDisplay({ ...modalsDisplay, delete: false })
+                    }} 
+                />
+
+                <EditModal 
+                    initialValues={initialValues} 
+                    modalDisplay={modalsDisplay.edit} 
+                    setModalDisplay={(boolean) => setModalsDisplay({ ...modalsDisplay, edit: boolean })} 
+                    onClick={() => {
+                    addToast("Bookmark edited.", "success")
+                    setModalsDisplay({ ...modalsDisplay, edit: false })
+                }} />
+
             </div>
     )
 }

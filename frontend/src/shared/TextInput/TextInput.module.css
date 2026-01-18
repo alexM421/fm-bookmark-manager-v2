@@ -47,7 +47,7 @@
             transition: all 0.3s ease;
             user-select: text;
 
-            &:placeholder{
+            &::placeholder{
                 color: var(--text-input-secondary-color);
             }
 

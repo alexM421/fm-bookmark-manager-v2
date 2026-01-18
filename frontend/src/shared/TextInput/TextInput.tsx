@@ -6,12 +6,12 @@ import IconShowPassword from '../../assets/IconShowPassword'
 export type TextInputProps = {
     nameId: string,
     legend?: string,
-    placeholder: string,
+    placeholder?: string,
     required: boolean,
     showAsterisk: boolean,
     error?: string,
     message?: string,
-    type?: "text" | "email" | "password",
+    type?: "text" | "email" | "password" | "url",
     minLength?: number,
     maxLength?: number,
     icon?: React.ReactNode,
@@ -39,7 +39,7 @@ export default function TextInput({ nameId, legend, placeholder, required, showA
                     type={type === "password" && showPassword ? "text" : type || "text"} 
                     id={nameId} 
                     name={nameId}
-                    placeholder={placeholder} 
+                    placeholder={placeholder || ""} 
                     className={`text-preset-4-medium ${error ? styles["error"] : ""}`}
                     autoComplete="off"
                     minLength={minLength}

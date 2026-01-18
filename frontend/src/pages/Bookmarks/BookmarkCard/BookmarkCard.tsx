@@ -24,7 +24,7 @@ type Bookmark = {
 
 export default function BookmarkCard({ bookmark }: { bookmark: Bookmark }) {
 
-    const { title, url, favicon, description, tags, pinned, isArchived, visitCount, createdAt, lastVisited } = bookmark
+    const { title, url, favicon, description, tags, pinned, visitCount, createdAt, lastVisited } = bookmark
 
     const dateFormatter = new Intl.DateTimeFormat('en-US', 
         { day: "numeric", month: 'short' }
@@ -42,7 +42,7 @@ export default function BookmarkCard({ bookmark }: { bookmark: Bookmark }) {
                         <p className="text-preset-5">{url}</p>
                     </div>
                     
-                    <BookmarkCardMenu pinned={pinned} isArchived={isArchived} url={url} />
+                    <BookmarkCardMenu bookmark={bookmark} />
                 </div>
                 
                 <hr />
