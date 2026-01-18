@@ -1,9 +1,12 @@
+/* Styles */
 import styles from './BookmarkCard.module.css'
+/* Icons */
 import IconCreatedAt from '../../../assets/IconCreatedAt'
 import IconViews from '../../../assets/IconViews'
 import IconLastVisited from '../../../assets/IconLastVisited'
 import IconPin from '../../../assets/IconPin'
-import IconMenuBookmark from '../../../assets/IconMenuBookmark'
+/* Components */
+import BookmarkCardMenu from './BookmarkCardMenu'
 
 type Bookmark = {
     id: string
@@ -21,9 +24,11 @@ type Bookmark = {
 
 export default function BookmarkCard({ bookmark }: { bookmark: Bookmark }) {
 
-    const { title, url, favicon, description, tags, pinned, visitCount, createdAt, lastVisited } = bookmark
+    const { title, url, favicon, description, tags, pinned, isArchived, visitCount, createdAt, lastVisited } = bookmark
 
-
+    const dateFormatter = new Intl.DateTimeFormat('en-US', 
+        { day: "numeric", month: 'short' }
+    )
 
     return (
         <div className={styles["bookmark-card"]}>
@@ -37,9 +42,7 @@ export default function BookmarkCard({ bookmark }: { bookmark: Bookmark }) {
                         <p className="text-preset-5">{url}</p>
                     </div>
                     
-                    <button className={styles["bookmark-card-main-header-menu"]}>
-                        <IconMenuBookmark />
-                    </button>
+                    <BookmarkCardMenu pinned={pinned} isArchived={isArchived} />
                 </div>
                 
                 <hr />
@@ -62,11 +65,11 @@ export default function BookmarkCard({ bookmark }: { bookmark: Bookmark }) {
                     </div>
                     <div className={styles["bookmark-card-footer-item"]}>
                         <IconLastVisited />
-                        <p className="text-preset-5">{lastVisited}</p>
+                        <p className="text-preset-5">{lastVisited ? dateFormatter.format(new Date(lastVisited)) : "-"}</p>
                     </div>
                     <div className={styles["bookmark-card-footer-item"]}>
                         <IconCreatedAt />
-                        <p className="text-preset-5">{createdAt}</p>
+                        <p className="text-preset-5">{dateFormatter.format(new Date(createdAt))}</p>
                     </div>
                 </div>  
                 {pinned && <IconPin />}

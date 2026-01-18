@@ -1,27 +1,17 @@
 import styles from "./Bookmarks.module.css"
 import IconSort from "../../assets/IconSort"
-import { useRef, useState } from "react"
 import IconCheck from "../../assets/IconCheck"
-import useHandleClickOutside from "../../hooks/useHandleClickOutside"
 import BookmarkCard from "./BookmarkCard/BookmarkCard"
-import data from "../../../data.json"
+import useBookmarksData from "./useBookmarksData"
 
-export default function Bookmarks() {
+export default function Bookmarks({ search }: { search: string }) {
 
-    const { bookmarks } = data
-
-    const [sortBy, setSortBy] = useState<string>("most-recent")
-    const [showSortOptions, setShowSortOptions] = useState<boolean>(false)
-
-
-    const sortOptionsRef = useRef<HTMLDivElement>(null)
-    const sortButtonRef = useRef<HTMLButtonElement>(null)
-    useHandleClickOutside(sortOptionsRef, () => setShowSortOptions(false), sortButtonRef)
-
-    const handleOptionClick = (option: string) => {
-        setSortBy(option)
-        setShowSortOptions(false)
-    }
+    const { 
+        showSortOptions, setShowSortOptions, 
+        sortButtonRef, sortOptionsRef, 
+        handleOptionClick, 
+        sortBy, filteredBookmarks 
+    } = useBookmarksData({ search })
 
     return (    
         <div className={styles["bookmarks"]}>
@@ -49,7 +39,7 @@ export default function Bookmarks() {
                 </div>
             </div>
             <div className={styles["bookmarks-grid"]}>
-                {bookmarks.map((bookmark) => (
+                {filteredBookmarks.map((bookmark) => (
                     <BookmarkCard key={bookmark.id} bookmark={bookmark} />
                 ))}
             </div>

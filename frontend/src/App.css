@@ -128,6 +128,11 @@
     --bookmark-card-menu-border-color: var(--neutral-500);
     --bookmark-card-menu-hover-border-color: var(--neutral-400);
     --bookmark-card-menu-focus-outline-color: var(--neutral-100);
+    
+    --bookmark-menu-bg-color: var(--neutral-600);
+    --bookmark-menu-border-color: var(--neutral-500);
+    --bookmark-menu-hover-bg-color: var(--neutral-500);
+    --bookmark-menu-focus-outline-color: var(--neutral-100);
 
     --asterik-color: var(--neutral-100);
     --error-color: var(--red-600);
