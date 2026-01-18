@@ -13,9 +13,13 @@ import IconMenuBookmark from "../../../assets/IconMenuBookmark"
 import { useRef, useState } from "react"
 /* Hooks */
 import useHandleClickOutside from "../../../hooks/useHandleClickOutside"
+/* Contexts */
+import { useToastContext } from "../../../contexts/toast/ToastContext"
 
 
 export default function BookmarkCardMenu({ pinned, isArchived, url }: { pinned: boolean, isArchived: boolean, url: string }) {
+
+    const { addToast } = useToastContext()
 
     //handle the menu click outside
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -32,7 +36,15 @@ export default function BookmarkCardMenu({ pinned, isArchived, url }: { pinned: 
      
 
     //copy URL button
-    const copyURL = <button className={styles["bookmark-card-main-header-menu-options-item"]}>
+    const copyURL = 
+    <button 
+        className={styles["bookmark-card-main-header-menu-options-item"]}
+        onClick={() => {
+            navigator.clipboard.writeText(url)
+            console.log("URL copied to clipboard")
+            addToast("URL copied to clipboard", "success")
+        }}
+    >
         <IconCopy />
         <p className="text-preset-5">Copy URL</p>
     </button>
