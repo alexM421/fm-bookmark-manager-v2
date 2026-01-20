@@ -32,6 +32,7 @@
         background: none;
         background-color: transparent;
         border: 1px solid var(--btn-cancel-border-color);
+        color: var(--btn-cancel-text-color);
     
         &:hover{
             background-color: var(--btn-cancel-hover-bg-color);
@@ -48,6 +49,7 @@
             border-color: var(--btn-cancel-active-border-color);
             background-color: transparent;
             outline-color: transparent;
+            color: var(--btn-cancel-active-text-color);
         }
     }
 
