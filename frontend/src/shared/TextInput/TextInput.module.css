@@ -1,6 +1,9 @@
 .text-input{
     display: flex;
     flex-direction: column;
+    min-width: 0;
+    width: 100%;
+    flex: 1;
     
     gap: 6px;
     
@@ -9,12 +12,12 @@
     }
     
     &>div{
-
         position: relative;
         display: flex;
         flex-direction: column;
         user-select: none;
-        
+        min-width: 0;
+        width: 100%;
 
         &>.icon{
             position: absolute;
@@ -46,6 +49,9 @@
             outline-offset: 2px;
             transition: all 0.3s ease;
             user-select: text;
+            min-width: 0;
+            width: 100%;
+            max-width: 400px;
 
             &::placeholder{
                 color: var(--text-input-secondary-color);

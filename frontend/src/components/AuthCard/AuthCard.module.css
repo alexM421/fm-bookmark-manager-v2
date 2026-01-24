@@ -5,6 +5,11 @@
     height: 100vh;
     width: 100vw;
     background-color: var(--body-bg-color);
+
+    @media (max-width: 768px) {
+        width: calc(100% - 32px);
+        margin: auto;
+    }
     
     &> .auth-card{
         display: flex;
@@ -16,6 +21,10 @@
         background-color: var(--auth-card-bg-color);
         width: 448px;
         border: 1px solid var(--auth-form-border-color);
+
+        @media (max-width: 768px) {
+            padding: 20px;
+        }
     
         &>img{
             height: 32px;

@@ -12,6 +12,9 @@ export type TagType = {
 
 export default function HomeLayout() {
 
+    //handle the sidebar
+    const [sidebarOpen, setSidebarOpen] = useState(false)
+
     //handle the search
     const [search, setSearch] = useState("")
 
@@ -25,9 +28,9 @@ export default function HomeLayout() {
     
     return (
         <div className={styles["home-layout"]}>
-            <Sidebar tags={tags} setTags={setTags} />
+            <Sidebar tags={tags} setTags={setTags} setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />
             <div>
-                <Navbar search={search} setSearch={setSearch} />
+                <Navbar search={search} setSearch={setSearch} setSidebarOpen={setSidebarOpen} />
                 <Bookmarks search={search} tags={tags} />
             </div>
         </div>

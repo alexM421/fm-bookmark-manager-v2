@@ -71,6 +71,7 @@
     --navbar-profile-color: var(--neutral-900);
     --navbar-profile-primary-color: var(--neutral-900);
     --navbar-profile-secondary-color: var(--neutral-800);
+    --navbar-hover-sidebar-bg-color: var(--neutral-100);
 
     --profile-menu-bg-color: var(--neutral-0);
     --profile-menu-border-color: var(--neutral-300);
@@ -193,6 +194,7 @@
     --navbar-profile-color: var(--neutral-0);
     --navbar-profile-primary-color: var(--neutral-0);
     --navbar-profile-secondary-color: var(--neutral-100);
+    --navbar-hover-sidebar-bg-color: var(--neutral-600);
 
     --profile-menu-bg-color: var(--neutral-600);
     --profile-menu-border-color: var(--neutral-400);
