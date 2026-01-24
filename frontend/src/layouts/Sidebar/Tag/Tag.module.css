@@ -1,0 +1,43 @@
+.tag{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+
+    &>.tag-select{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+       
+
+        &>p{
+            color: var(--sidebar-text-color-secondary);
+        }
+    }
+
+    &:hover, &:has(.tag-select>label>input:focus-visible){
+        background-color: var(--sidebar-hover-bg-color);
+
+        &>.tag-select>p{
+            color: var(--sidebar-text-color-primary);
+        }
+    }
+
+    &>.tag-counter{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2px 8px;
+        border-radius: 9999px;
+        background-color: var(--tag-counter-bg-color);
+        border: 1px solid var(--tag-counter-border-color);
+
+        &>p{
+            color: var(--sidebar-text-color-primary);
+            font-weight: 500;
+        }
+    }
+}

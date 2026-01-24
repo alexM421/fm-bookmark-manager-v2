@@ -6,7 +6,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
     const [theme, setTheme] = useState<ThemeType>(() => {
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        if (mediaQuery.matches) return "dark";
+        if (mediaQuery.matches) return "light";
         return "light";
     })
 

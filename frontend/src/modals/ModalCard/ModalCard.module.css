@@ -1,0 +1,142 @@
+.modal-card{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--modal-card-bg-color);
+    border: 1px solid var(--modal-card-border-color);
+    border-radius: 16px;
+    padding: 32px;
+    width: 570px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    z-index: 1000;
+
+    &.small{
+        width: 450px;
+        padding: 24px;
+        gap: 24px;
+
+        &>.modal-card-close{
+            top: 14px;
+            right: 14px;
+        }
+    }
+
+    &>.modal-card-close{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: transparent;
+        border: 1px solid var(--modal-card-border-color);
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+        &>svg{
+            color: var(--modal-card-text-primary-color);
+            width: 20px;    
+            height: 20px;
+        }
+
+        &:hover{
+            cursor: pointer;
+            background-color: var(--modal-card-close-hover-bg-color);
+
+            &>svg{
+                color: var(--modal-card-cross-icon-hover-color);
+            }
+        }
+
+        &:focus-visible{
+            outline-color: var(--modal-card-focus-outline-color);
+
+            &>svg{
+                color: var(--modal-card-cross-icon-hover-color);
+            }
+        }
+    }
+
+    &>.modal-card-header{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &>h2{
+            color: var(--modal-card-text-primary-color);
+        }
+
+        &>p{
+            color: var(--modal-card-text-secondary-color);
+        }
+    }
+
+
+    &>form{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+
+        &>.modal-card-form-textarea{
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            &>label{
+                color: var(--text-input-primary-color);
+            }
+
+            &>textarea{
+                border: 1px solid var(--text-input-border-color);
+                border-radius: 8px;
+                padding: 12px;
+                background-color: var(--text-input-bg-color);
+                color: var(--text-input-primary-color);
+                outline: 2px solid transparent;
+                outline-offset: 2px;
+                resize: none;
+                height: 100px;
+                transition: all 0.3s ease;
+
+                &:hover{
+                    cursor: text;
+                    background-color: var(--text-input-hover-bg-color);
+                }
+
+                &:focus{
+                    background-color: var(--text-input-bg-color);
+                    outline-color: var(--text-input-focus-border-color);
+                }
+                
+            }
+
+            &>p{
+                color: var(--text-input-secondary-color);
+                text-align: end;
+            }
+        }
+
+    }
+    &>.modal-card-footer{
+        display: flex;
+        justify-content: flex-end;
+        gap: 16px;
+    }
+}
+
+
+.modal-background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}

@@ -1,6 +1,9 @@
 .text-input{
     display: flex;
     flex-direction: column;
+    min-width: 0;
+    width: 100%;
+    flex: 1;
     
     gap: 6px;
     
@@ -9,12 +12,33 @@
     }
     
     &>div{
-
         position: relative;
         display: flex;
         flex-direction: column;
         user-select: none;
-        
+        min-width: 0;
+        width: 100%;
+
+        &>.icon{
+            position: absolute;
+            left: 12px;
+            height: 20px;
+            width: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-input-primary-color);
+
+            &>svg{
+                width: 20px;
+                height: 20px;
+                color: var(--text-input-secondary-color);
+            }
+        }
+
+        &:hover>.icon>svg{
+            color: var(--text-input-primary-color);
+        }
+
         &>input{
             border: 1px solid var(--text-input-border-color);
             border-radius: 8px;
@@ -25,8 +49,11 @@
             outline-offset: 2px;
             transition: all 0.3s ease;
             user-select: text;
+            min-width: 0;
+            width: 100%;
+            max-width: 400px;
 
-            &:placeholder{
+            &::placeholder{
                 color: var(--text-input-secondary-color);
             }
 
@@ -48,7 +75,10 @@
 
         &>button{
             position: absolute;
+            width: 24px;
+            height: 24px;
             right: 12px;
+            border-radius: 4px;
             top: 50%;
             transform: translateY(-50%);
             background: none;

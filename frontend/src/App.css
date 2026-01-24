@@ -20,6 +20,15 @@
     --btn-primary-hover-border-color: linear-gradient(180deg,#013C3Be0, #013C3BFF);
     --btn-primary-focus-border-color: var(--teal-800);
 
+    --btn-cancel-border-color: var(--neutral-400);
+    --btn-cancel-hover-bg-color: var(--neutral-100);
+    --btn-cancel-hover-border-color: var(--neutral-400);
+    --btn-cancel-focus-outline-color: var(--teal-700);
+    --btn-cancel-focus-border-color: var(--neutral-300);
+    --btn-cancel-active-border-color: var(--teal-700);
+    --btn-cancel-text-color: var(--neutral-900);
+    --btn-cancel-active-text-color: var(--teal-700);
+
     --text-input-primary-color: var(--neutral-900);
     --text-input-secondary-color: var(--neutral-800);
     --text-input-border-color: var(--neutral-500);
@@ -34,6 +43,83 @@
     --auth-secondary-color: var(--neutral-800);
     --auth-form-border-color: var(--neutral-500);
     --auth-form-hover-bg-color: var(--neutral-100);
+
+    --sidebar-bg-color: var(--neutral-0);
+    --sidebar-border-color: var(--neutral-300);
+    --sidebar-text-color-primary: var(--neutral-900);
+    --sidebar-text-color-secondary: var(--neutral-800);
+    --sidebar-hover-bg-color: var(--neutral-100);
+    --sidebar-active-bg-color: var(--neutral-100);
+
+    --tag-counter-bg-color: var(--neutral-100);
+    --tag-counter-border-color: var(--neutral-300);
+
+    --checkbox-border-color: var(--neutral-500);
+    --checkbox-hover-bg-color: var(--neutral-300);
+    --checkbox-focus-border-color: var(--neutral-500);
+    --checkbox-focus-bg-color: var(--neutral-0);
+    --checkbox-checked-bg-color: var(--teal-700);
+    --checkbox-checked-border-color: var(--teal-700);
+    --checkbox-checked-hover-border-color: var(--teal-800);
+    --checkbox-checked-hover-bg-color: var(--teal-800);
+    --checkbox-checked-focus-border-color: var(--teal-700);
+    --checkbox-checked-icon-color: var(--neutral-0);
+    --checkbox-focus-outline-color: var(--teal-700);
+
+    --navbar-bg-color: var(--neutral-0);
+    --navbar-border-color: var(--neutral-300);
+    --navbar-profile-color: var(--neutral-900);
+    --navbar-profile-primary-color: var(--neutral-900);
+    --navbar-profile-secondary-color: var(--neutral-800);
+    --navbar-hover-sidebar-bg-color: var(--neutral-100);
+
+    --profile-menu-bg-color: var(--neutral-0);
+    --profile-menu-border-color: var(--neutral-300);
+    --profile-menu-hover-bg-color: var(--neutral-100);
+
+    --theme-toggle-bg-color: var(--neutral-300);
+    --theme-toggle-icon-color: var(--neutral-900);
+    --theme-toggle-slider-bg-color: var(--neutral-0);
+    --theme-toggle-focus-outline-color: var(--teal-800);
+
+    --bookmarks-header-sort-bg-color: var(--neutral-0);
+    --bookmarks-header-sort-border-color: var(--neutral-300);
+    --bookmarks-text-primary-color: var(--neutral-900);
+    --bookmarks-text-secondary-color: var(--neutral-800);
+    --bookmarks-header-sort-options-bg-color: var(--neutral-0);
+    --bookmarks-header-sort-options-border-color: var(--neutral-300);
+    --bookmarks-header-sort-options-hover-bg-color: var(--neutral-100);
+
+    --bookmark-card-bg-color: var(--neutral-0);
+    --bookmark-card-border-color: var(--neutral-300);
+    --bookmark-card-text-primary-color: var(--neutral-900);
+    --bookmark-card-text-secondary-color: var(--neutral-800);
+    --bookmark-card-divider-color: var(--neutral-500);
+    --bookmark-card-tag-bg-color: var(--neutral-100);
+    --bookmark-card-menu-border-color: var(--neutral-300);
+    --bookmark-card-menu-hover-border-color: var(--neutral-100);
+    --bookmark-card-menu-focus-outline-color: var(--teal-700);   
+    --bookmark-menu-bg-color: var(--neutral-0);
+    --bookmark-menu-border-color: var(--neutral-300);
+    --bookmark-menu-hover-bg-color: var(--neutral-100);
+    --bookmark-menu-focus-outline-color: var(--teal-700);
+
+    --toast-bg-color: var(--neutral-0);
+    --toast-hover-bg-color: var(--neutral-100);
+    --toast-border-color: var(--neutral-300);
+    --toast-icon-color: var(--teal-700);
+    --toast-text-color: var(--neutral-900);
+    --toast-button-color: var(--neutral-900);
+    --toast-button-hover-color: var(--red-800);
+    --toast-button-focus-outline-color: var(--red-800);
+
+    --modal-card-bg-color: var(--neutral-0);
+    --modal-card-border-color: var(--neutral-300);
+    --modal-card-text-primary-color: var(--neutral-900);
+    --modal-card-text-secondary-color: var(--neutral-800);  
+    --modal-card-close-hover-bg-color: var(--neutral-100);
+    --modal-card-cross-icon-hover-color: var(--red-800);
+    --modal-card-focus-outline-color: var(--teal-700);
 
     --asterik-color: var(--teal-700);
     --error-color: var(--red-800);
@@ -59,6 +145,15 @@
     --btn-primary-hover-border-color: linear-gradient(180deg,#013C3B, #013C3BFF);
     --btn-primary-focus-border-color: var(--neutral-100);
 
+    --btn-cancel-border-color: var(--neutral-400);
+    --btn-cancel-hover-bg-color: var(--neutral-600);
+    --btn-cancel-hover-border-color: var(--neutral-500);
+    --btn-cancel-focus-outline-color: var(--neutral-100);
+    --btn-cancel-focus-border-color: var(--neutral-500);
+    --btn-cancel-active-border-color: var(--neutral-0);
+    --btn-cancel-text-color: var(--neutral-0);
+    --btn-cancel-active-text-color: var(--neutral-0);
+
     --text-input-primary-color: var(--neutral-0);
     --text-input-secondary-color: var(--neutral-100);
     --text-input-border-color: var(--neutral-300);
@@ -71,7 +166,85 @@
     --auth-primary-color: var(--neutral-0);
     --auth-secondary-color: var(--neutral-100);
     --auth-form-border-color: var(--neutral-300);
-    
+
+    --sidebar-bg-color: var(--neutral-800);
+    --sidebar-border-color: var(--neutral-500);
+    --sidebar-text-color-primary: var(--neutral-0);
+    --sidebar-text-color-secondary: var(--neutral-100);
+    --sidebar-hover-bg-color: var(--neutral-600);
+    --sidebar-active-bg-color: var(--neutral-600);
+
+    --tag-counter-bg-color: var(--neutral-600);
+    --tag-counter-border-color: var(--neutral-400);
+
+    --checkbox-border-color: var(--neutral-300);
+    --checkbox-hover-bg-color: var(--neutral-600);
+    --checkbox-focus-border-color: var(--neutral-400);
+    --checkbox-focus-bg-color: var(--neutral-800);
+    --checkbox-checked-bg-color: var(--teal-700);
+    --checkbox-checked-border-color: var(--teal-700);
+    --checkbox-checked-hover-border-color: var(--teal-800);
+    --checkbox-checked-hover-bg-color: var(--teal-800);
+    --checkbox-checked-focus-border-color: var(--neutral-400);
+    --checkbox-checked-icon-color: var(--neutral-0);
+    --checkbox-focus-outline-color: var(--neutral-100);
+
+    --navbar-bg-color: var(--neutral-800);
+    --navbar-border-color: var(--neutral-500);
+    --navbar-profile-color: var(--neutral-0);
+    --navbar-profile-primary-color: var(--neutral-0);
+    --navbar-profile-secondary-color: var(--neutral-100);
+    --navbar-hover-sidebar-bg-color: var(--neutral-600);
+
+    --profile-menu-bg-color: var(--neutral-600);
+    --profile-menu-border-color: var(--neutral-400);
+    --profile-menu-hover-bg-color: var(--neutral-500);
+
+    --theme-toggle-bg-color: var(--neutral-400);
+    --theme-toggle-icon-color: var(--neutral-0);
+    --theme-toggle-slider-bg-color: var(--neutral-600);
+    --theme-toggle-focus-outline-color: var(--neutral-100);
+
+    --bookmarks-header-sort-bg-color: var(--neutral-600);
+    --bookmarks-header-sort-border-color: var(--neutral-400);
+    --bookmarks-text-primary-color: var(--neutral-0);
+    --bookmarks-text-secondary-color: var(--neutral-100);
+    --bookmarks-header-sort-options-bg-color: var(--neutral-600);
+    --bookmarks-header-sort-options-border-color: var(--neutral-500);
+    --bookmarks-header-sort-options-hover-bg-color: var(--neutral-500);
+
+    --bookmark-card-bg-color: var(--neutral-800);
+    --bookmark-card-border-color: var(--neutral-600);
+    --bookmark-card-text-primary-color: var(--neutral-0);
+    --bookmark-card-text-secondary-color: var(--neutral-100);
+    --bookmark-card-divider-color: var(--neutral-500);
+    --bookmark-card-tag-bg-color: var(--neutral-600);
+    --bookmark-card-menu-border-color: var(--neutral-500);
+    --bookmark-card-menu-hover-border-color: var(--neutral-400);
+    --bookmark-card-menu-focus-outline-color: var(--neutral-100);
+
+    --toast-bg-color: var(--neutral-500);
+    --toast-hover-bg-color: var(--neutral-300);
+    --toast-border-color: var(--neutral-400);
+    --toast-icon-color: var(--neutral-0);
+    --toast-text-color: var(--neutral-0);
+    --toast-button-color: var(--neutral-100);
+    --toast-button-hover-color: var(--red-600);
+    --toast-button-focus-outline-color: var(--red-600);
+
+    --bookmark-menu-bg-color: var(--neutral-600);
+    --bookmark-menu-border-color: var(--neutral-500);
+    --bookmark-menu-hover-bg-color: var(--neutral-500);
+    --bookmark-menu-focus-outline-color: var(--neutral-100);
+
+
+    --modal-card-bg-color: var(--neutral-800);
+    --modal-card-border-color: var(--neutral-500);
+    --modal-card-text-primary-color: var(--neutral-0);
+    --modal-card-text-secondary-color: var(--neutral-100);  
+    --modal-card-close-hover-bg-color: var(--neutral-600);
+    --modal-card-cross-icon-hover-color: var(--red-600);
+    --modal-card-focus-outline-color: var(--neutral-100);
 
     --asterik-color: var(--neutral-100);
     --error-color: var(--red-600);
@@ -150,8 +323,17 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Manrope";
+    text-decoration: none;
 }
 
 body{
     background-color: var(--body-bg-color);
+    height: 100vh;
+    max-height: 100vh;
+}
+
+/* Hide Scrollbar */
+
+*::-webkit-scrollbar {
+    display: none;
 }
